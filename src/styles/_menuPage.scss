@@ -1,0 +1,498 @@
+@import "variables";
+
+.menu-link,
+.menu-link:hover,
+.menu-link:focus,
+.menu-link:visited {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.menu-desktop {
+  background: #0F0B09;
+  color: white;
+  min-height: 100vh;
+  padding: 40px;
+
+  .menu-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+  }
+
+  .menu-desktop a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* LEFT */
+  .menu-left {
+    h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+
+      span {
+        color: #C8A27A;
+      }
+    }
+
+    input {
+      width: 60%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      background: #1E120D;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+  }
+
+  /* TABS */
+  .menu-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+
+    span {
+      padding: 8px 16px;
+      background: #1E120D;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .active {
+      background: #C8A27A;
+      color: black;
+    }
+  }
+
+  /* GRID */
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .menu-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .menu-link .coffee-card {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* CARD */
+  .coffee-card {
+    background: #1E120D;
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    transition: 0.3s;
+
+    h5 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .sub {
+      color: #aaa;
+      font-size: 12px;
+    }
+
+    .card-bottom {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+
+      span {
+        color: #C8A27A;
+      }
+
+      button {
+        background: #C8A27A;
+        border: none;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .coffee-card:hover {
+    transform: scale(1.05);
+  }
+
+  .qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    button {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: #C8A27A;
+      color: black;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    span {
+      color: white;
+      font-weight: 600;
+    }
+  }
+  /* RIGHT PANEL */
+  .menu-right {
+    background: #1E120D;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .option-group {
+      margin: 15px 0;
+
+      h5 {
+        margin-bottom: 8px;
+      }
+
+      .options {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        span {
+          padding: 6px 12px;
+          background: #1E120D;
+          border-radius: 20px;
+          cursor: pointer;
+          font-size: 12px;
+        }
+
+        .active {
+          background: #C8A27A;
+          color: black;
+        }
+      }
+    }
+
+    .price-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        color: #C8A27A;
+        font-size: 20px;
+      }
+
+      button {
+        background: #C8A27A;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+      }
+    }
+  }
+}
+
+/* ACTIVE CARD */
+.coffee-card.active {
+  border: 2px solid #C8A27A;
+  transform: scale(1.05);
+}
+
+/* INGREDIENT TAGS */
+.ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+
+  span {
+    background: #0F0B09;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+}
+
+.menu-mobile {
+  background: #0F0B09;
+  color: white;
+  padding: 15px;
+
+  .menu-header {
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+
+      span {
+        color: #C8A27A;
+      }
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background: #1E120D;
+      color: white;
+      margin-bottom: 15px;
+    }
+  }
+
+  .menu-tabs {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    margin-bottom: 15px;
+
+    span {
+      padding: 6px 12px;
+      background: #1E120D;
+      border-radius: 20px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .active {
+      background: #C8A27A;
+      color: black;
+    }
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .coffee-card {
+    background: #1E120D;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+
+    img {
+      width: 100%;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    h5 {
+      font-size: 13px;
+      margin: 6px 0;
+    }
+
+    .card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        color: #C8A27A;
+        font-size: 12px;
+      }
+
+      button {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: #C8A27A;
+        border: none;
+      }
+    }
+  }
+}
+
+/* =========================
+   FAVORITES
+========================= */
+
+.menu-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+
+/* =========================
+   CARD FAVORITE
+========================= */
+
+.favorite-button {
+  position: absolute;
+
+  top: 6px;
+  right: 6px;
+
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(245, 237, 227, 0.2);
+  border-radius: 50%;
+
+  background: rgba(43, 27, 18, 0.9);
+
+  color: $text;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $primary;
+
+    color: $primary;
+
+    transform: scale(1.08);
+  }
+
+  &.active {
+    background: $primary;
+
+    border-color: $primary;
+
+    color: $bg-color;
+  }
+}
+
+
+/* =========================
+   DESKTOP PREVIEW
+========================= */
+
+.preview-image-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.preview-favorite {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(245, 237, 227, 0.2);
+  border-radius: 50%;
+
+  background: rgba(43, 27, 18, 0.9);
+
+  color: $text;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $primary;
+
+    color: $primary;
+
+    transform: scale(1.08);
+  }
+
+  &.active {
+    background: $primary;
+
+    border-color: $primary;
+
+    color: $bg-color;
+  }
+}
+
+/* =========================
+   CARD RATING FIX
+========================= */
+
+.coffee-card {
+  position: relative;
+  overflow: visible;
+}
+
+.coffee-card .rating {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  background: rgba(43, 27, 18, 0.9);
+
+  color: $text;
+
+  font-size: 8px;
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+/* Make sure the image wrapper doesn't cover the rating */
+.coffee-card .menu-image-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* Favorite stays above image but below nothing important */
+.coffee-card .favorite-button {
+  z-index: 10;
+}

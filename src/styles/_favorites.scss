@@ -1,0 +1,569 @@
+@import "variables";
+
+.favorites-page {
+  min-height: calc(100vh - 80px);
+  background: $bg-color;
+  color: $text;
+  padding: 80px 40px;
+}
+
+.favorites-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.favorites-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 50px;
+
+  .favorites-eyebrow {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: $primary;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 0 0 12px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 52px;
+    font-weight: 600;
+
+    color: $text;
+
+    span {
+      color: $primary;
+    }
+  }
+
+  p {
+    margin: 0;
+
+    color: rgba(245, 237, 227, 0.6);
+
+    font-size: 14px;
+  }
+}
+
+
+/* =========================
+   CLEAR BUTTON
+========================= */
+
+.clear-favorites {
+  padding: 11px 20px;
+
+  border: 1px solid rgba(200, 162, 122, 0.3);
+  border-radius: 30px;
+
+  background: transparent;
+
+  color: $primary;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  &:hover {
+    background: $primary;
+    color: $bg-color;
+  }
+}
+
+
+/* =========================
+   FAVORITES GRID
+========================= */
+
+.favorites-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px;
+}
+
+
+/* =========================
+   FAVORITE CARD
+========================= */
+
+.favorite-card {
+  overflow: hidden;
+
+  background: $card-bg;
+
+  border: 1px solid rgba(200, 162, 122, 0.12);
+
+  border-radius: 18px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(200, 162, 122, 0.3);
+
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+  }
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.favorite-image {
+  position: relative;
+
+  height: 270px;
+
+  overflow: hidden;
+
+  background: #24150e;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+  }
+}
+
+.favorite-card:hover {
+  .favorite-image img {
+    transform: scale(1.05);
+  }
+}
+
+
+/* =========================
+   REMOVE HEART
+========================= */
+
+.remove-favorite {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 50%;
+
+  background: rgba(43, 27, 18, 0.85);
+
+  color: $primary;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  &:hover {
+    background: $primary;
+    color: $bg-color;
+    transform: scale(1.08);
+  }
+}
+
+
+/* =========================
+   INFORMATION
+========================= */
+
+.favorite-info {
+  padding: 25px;
+}
+
+
+/* =========================
+   TITLE + PRICE
+========================= */
+
+.favorite-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 10px;
+}
+
+.favorite-category {
+  display: block;
+
+
+  color: $primary;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.favorite-top h2 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  color: $text;
+}
+
+.favorite-price {
+  color: $primary;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   RATING
+========================= */
+
+.favorite-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+
+  color: rgba(245, 237, 227, 0.6);
+
+  font-size: 12px;
+
+  span {
+    color: $primary;
+
+    font-size: 13px;
+  }
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.favorite-description {
+  min-height: 45px;
+
+  color: rgba(245, 237, 227, 0.55);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.favorite-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.view-favorite,
+.add-favorite-cart {
+  flex: 1;
+
+  padding: 11px 12px;
+
+  border-radius: 25px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.view-favorite {
+  border: 1px solid rgba(200, 162, 122, 0.35);
+
+  color: $primary;
+
+  text-decoration: none;
+
+  &:hover {
+    background: rgba(200, 162, 122, 0.1);
+  }
+}
+
+.add-favorite-cart {
+  border: 1px solid $primary;
+
+  background: $primary;
+
+  color: $bg-color;
+
+  &:hover {
+    background: transparent;
+
+    color: $primary;
+  }
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.favorites-empty {
+  min-height: 450px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 20px;
+
+  border: 1px solid rgba(200, 162, 122, 0.12);
+
+  border-radius: 20px;
+
+  background: $card-bg;
+
+  text-align: center;
+}
+
+.empty-heart {
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 25px;
+
+  border-radius: 50%;
+
+  background: rgba(200, 162, 122, 0.08);
+
+  color: $primary;
+
+  font-size: 45px;
+}
+
+.favorites-empty h2 {
+  margin: 0 0 12px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 32px;
+
+  color: $text;
+}
+
+.favorites-empty p {
+  max-width: 480px;
+
+  margin: 0 0 30px;
+
+  color: rgba(245, 237, 227, 0.55);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+.browse-menu-button {
+  display: inline-block;
+
+  padding: 13px 28px;
+
+  border: 1px solid $primary;
+
+  border-radius: 30px;
+
+  background: $primary;
+
+  color: $bg-color;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+
+  &:hover {
+    background: transparent;
+
+    color: $primary;
+  }
+}
+
+
+/* =========================
+   BOTTOM CTA
+========================= */
+
+.favorites-bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 50px;
+
+  p {
+    margin: 0;
+
+    color: rgba(245, 237, 227, 0.5);
+
+    font-size: 13px;
+  }
+
+  a {
+    color: $primary;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+
+    &:hover {
+      color: $text;
+    }
+  }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+  .favorites-page {
+    padding: 65px 25px;
+  }
+
+  .favorites-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+  .favorites-page {
+    padding: 55px 20px;
+  }
+
+  .favorites-header {
+    display: block;
+
+    margin-bottom: 35px;
+
+    h1 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+  }
+
+  .clear-favorites {
+    margin-top: 20px;
+  }
+
+  .favorites-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .favorite-image {
+    height: 250px;
+  }
+
+  .favorite-info {
+    padding: 22px;
+  }
+
+  .favorite-top h2 {
+    font-size: 20px;
+  }
+
+  .favorite-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .view-favorite,
+  .add-favorite-cart {
+    width: 100%;
+  }
+
+  .favorites-bottom {
+    flex-direction: column;
+
+    margin-top: 35px;
+  }
+}

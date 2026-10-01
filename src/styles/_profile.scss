@@ -1,0 +1,469 @@
+@import "variables";
+
+.profile-page {
+  min-height: calc(100vh - 80px);
+  background: $bg-color;
+  color: $text;
+  padding: 80px 40px;
+
+  .profile-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* =========================
+     PAGE TITLE
+  ========================= */
+
+  .profile-title {
+    text-align: center;
+    margin-bottom: 55px;
+
+    span {
+      display: inline-block;
+      color: $primary;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 15px;
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      font-weight: 600;
+      color: $text;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: rgba(245, 237, 227, 0.65);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+  }
+
+  /* =========================
+     PROFILE HEADER
+  ========================= */
+
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    background: $card-bg;
+    border: 1px solid rgba(200, 162, 122, 0.15);
+    border-radius: 18px;
+    padding: 35px 40px;
+    margin-bottom: 35px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+  }
+
+  /* =========================
+     AVATAR
+  ========================= */
+
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(200, 162, 122, 0.12);
+    border: 1px solid $primary;
+
+    color: $primary;
+
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    font-weight: 600;
+
+    box-shadow:
+      0 0 0 8px rgba(200, 162, 122, 0.04);
+  }
+
+  /* =========================
+     USER INFORMATION
+  ========================= */
+
+  .profile-intro {
+    .welcome-text {
+      margin: 0 0 5px;
+
+      color: $primary;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 6px;
+
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: $text;
+    }
+
+    .profile-email {
+      margin: 0 0 15px;
+
+      color: rgba(245, 237, 227, 0.6);
+      font-size: 14px;
+    }
+
+    .member-badge {
+      display: inline-block;
+
+      padding: 7px 14px;
+
+      border: 1px solid rgba(200, 162, 122, 0.25);
+      border-radius: 30px;
+
+      background: rgba(200, 162, 122, 0.08);
+
+      color: $primary;
+
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+
+  /* =========================
+     PROFILE CARDS
+  ========================= */
+
+  .profile-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .profile-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    min-height: 145px;
+
+    padding: 25px;
+
+    background: $card-bg;
+
+    border: 1px solid rgba(200, 162, 122, 0.12);
+    border-radius: 16px;
+
+    transition:
+      transform 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+
+      border-color: rgba(200, 162, 122, 0.35);
+
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  /* =========================
+     CARD ICON
+  ========================= */
+
+  .profile-card-icon {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(200, 162, 122, 0.1);
+
+    color: $primary;
+
+    font-size: 22px;
+
+    transition: 0.3s ease;
+  }
+
+  .profile-card:hover .profile-card-icon {
+    background: $primary;
+    color: $bg-color;
+  }
+
+  /* =========================
+     CARD TEXT
+  ========================= */
+
+  .profile-card-text {
+    flex: 1;
+
+    h3 {
+      margin: 0 0 7px;
+
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      font-weight: 600;
+
+      color: $text;
+    }
+
+    p {
+      margin: 0;
+
+      color: rgba(245, 237, 227, 0.55);
+
+      font-size: 13px;
+      line-height: 1.6;
+    }
+  }
+
+  /* =========================
+     CARD LINK
+  ========================= */
+
+  .profile-card-link {
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    color: $primary;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+
+    &:hover {
+      transform: translateX(4px);
+      color: $text;
+    }
+  }
+
+  /* =========================
+     ACTION BUTTONS
+  ========================= */
+
+  .profile-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 40px;
+  }
+
+  .continue-shopping,
+  .logout-button {
+    min-width: 180px;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+  }
+
+  .continue-shopping {
+    border: 1px solid $primary;
+    background: $primary;
+    color: $bg-color;
+
+    &:hover {
+      background: transparent;
+      color: $primary;
+      transform: translateY(-2px);
+    }
+  }
+
+  .logout-button {
+    border: 1px solid rgba(245, 237, 227, 0.25);
+    background: transparent;
+    color: $text;
+
+    &:hover {
+      border-color: $primary;
+      color: $primary;
+      transform: translateY(-2px);
+    }
+  }
+
+  /* =========================
+     NOT LOGGED IN
+  ========================= */
+
+  .profile-login-message {
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    .profile-icon {
+      width: 80px;
+      height: 80px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 25px;
+
+      border-radius: 50%;
+
+      background: rgba(200, 162, 122, 0.1);
+
+      font-size: 32px;
+    }
+
+    h1 {
+      margin: 0 0 15px;
+
+      font-family: "Playfair Display", serif;
+      font-size: 36px;
+      color: $text;
+    }
+
+    p {
+      max-width: 450px;
+
+      margin: 0 0 30px;
+
+      color: rgba(245, 237, 227, 0.6);
+
+      font-size: 14px;
+      line-height: 1.7;
+    }
+  }
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+  .profile-page {
+    padding: 65px 25px;
+
+    .profile-content {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+  .profile-page {
+    padding: 55px 20px;
+
+    .profile-title {
+      margin-bottom: 35px;
+
+      h1 {
+        font-size: 38px;
+      }
+
+      p {
+        font-size: 13px;
+      }
+    }
+
+    .profile-header {
+      flex-direction: column;
+      text-align: center;
+
+      padding: 30px 20px;
+      gap: 20px;
+    }
+
+    .profile-avatar {
+      width: 85px;
+      height: 85px;
+      min-width: 85px;
+
+      font-size: 34px;
+    }
+
+    .profile-intro {
+      h2 {
+        font-size: 27px;
+      }
+    }
+
+    .profile-card {
+      align-items: flex-start;
+      padding: 22px;
+
+      gap: 15px;
+    }
+
+    .profile-card-icon {
+      width: 45px;
+      height: 45px;
+      min-width: 45px;
+
+      font-size: 18px;
+    }
+
+    .profile-card-text {
+      h3 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+
+    .profile-card-link {
+      display: none;
+    }
+
+    .profile-actions {
+      flex-direction: column;
+
+      width: 100%;
+
+      margin-top: 30px;
+    }
+
+    .continue-shopping,
+    .logout-button {
+      width: 100%;
+    }
+  }
+}

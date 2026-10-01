@@ -1,0 +1,30 @@
+@import "variables";
+@import "navbar";
+@import "hero";
+@import "menu";
+@import "gallery";
+@import "story";
+@import "footer";
+
+body {
+  margin: 0;
+  background-color: $bg-color;
+  color: $text; 
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.text-muted {
+  color: #bbbbbb !important;
+}
+
+.card {
+  color: white !important;
+}

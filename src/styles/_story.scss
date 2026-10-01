@@ -1,0 +1,134 @@
+.story-section {
+  padding: 80px 60px;
+  background: linear-gradient(135deg, #1E120D, #2B1B12);
+  position: relative;
+  z-index: 10;
+
+  .story-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  /* IMAGE */
+  .story-image {
+    flex: 1;
+
+    img {
+      width: 100%;
+      max-width: 550px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 20px;
+      display: block;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  /* CONTENT */
+  .story-content {
+    flex: 1;
+
+    h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      color: #fff;
+      position: relative;
+
+    }
+
+    .highlight {
+      color: #C8A27A;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #ccc;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      font-size: 15px;
+      max-width: 550px;
+    }
+
+    .btn-coffee {
+      margin-top: 20px;
+      background: #C8A27A;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 30px;
+      color: #000;
+      font-weight: 600;
+      transition: 0.3s;
+
+      &:hover {
+        transform: translateY(-3px);
+        background: #d4b08a;
+      }
+    }
+  }
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+
+  .story-section {
+    padding: 60px 40px;
+
+    .story-container {
+      gap: 40px;
+    }
+
+    .story-content {
+
+      h2 {
+        font-size: 34px;
+      }
+    }
+  }
+
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .story-section {
+    padding: 50px 20px;
+
+    .story-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+    }
+
+    .story-image {
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .story-content {
+
+      h2 {
+        font-size: 30px;
+
+        &::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      p {
+        max-width: 100%;
+      }
+
+      .btn-coffee {
+        width: 100%;
+      }
+    }
+  }
+
+}
