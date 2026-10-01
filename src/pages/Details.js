@@ -16,29 +16,11 @@ function Details() {
 
   const [qty, setQty] = useState(1);
 
-  const [size, setSize] = useState("M");
-  const [temperature, setTemperature] = useState("Hot");
-  const [milk, setMilk] = useState("Regular");
-  const [sugar, setSugar] = useState("Normal");
-
-  const [portion, setPortion] = useState("Regular");
-  const [toppings, setToppings] = useState([]);
-  const [serve, setServe] = useState("Warm");
-
   if (!item) {
     return <h2>Item not found</h2>;
   }
 
   const isDessert = item.category === "desserts";
-
-  const toggleTopping = (topping) => {
-
-    setToppings((prev) =>
-      prev.includes(topping)
-        ? prev.filter((t) => t !== topping)
-        : [...prev, topping]
-    );
-  };
 
   const price = parseFloat(item.price.replace("$", ""));
   const total = (price * qty).toFixed(2);
@@ -87,30 +69,11 @@ function Details() {
 
             <button
               onClick={() => {
-
-                if (isDessert) {
-
-                  addToCart({
-                    ...item,
-                    qty,
-                    portion,
-                    toppings,
-                    serve,
-                    type: "desserts"
-                  });
-
-                } else {
-
-                  addToCart({
-                    ...item,
-                    qty,
-                    size,
-                    temperature,
-                    milk,
-                    sugar,
-                    type: "coffee"
-                  });
-                }
+                addToCart({
+                  ...item,
+                  qty,
+                  type: isDessert ? "desserts" : "coffee"
+                });
 
                 navigate("/cart");
               }}

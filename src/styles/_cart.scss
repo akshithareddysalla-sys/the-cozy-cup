@@ -1,18 +1,26 @@
+@import "variables";
+
 .cart-page {
-  background: #1E120D;
+  background: $bg-color;
   min-height: 100vh;
   padding: 100px 60px;
-  color: white;
+  color: $text;
 
   h1 {
     margin-bottom: 40px;
+    font-size: 42px;
   }
 
   .cart-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 40px;
+    align-items: start;
   }
+
+  /* =========================
+     CART ITEMS
+  ========================= */
 
   .cart-items {
     display: flex;
@@ -21,7 +29,7 @@
   }
 
   .cart-card {
-    background: #2B1B12;
+    background: $card-bg;
     padding: 20px;
     border-radius: 20px;
 
@@ -34,12 +42,28 @@
       height: 120px;
       object-fit: cover;
       border-radius: 16px;
+      flex-shrink: 0;
     }
 
     .cart-info {
       flex: 1;
+
+      h3 {
+        margin: 0 0 8px;
+        font-size: 20px;
+      }
+
+      p {
+        margin: 0;
+        color: $primary;
+        font-weight: 600;
+      }
     }
   }
+
+  /* =========================
+     QUANTITY
+  ========================= */
 
   .qty-controls {
     display: flex;
@@ -49,31 +73,310 @@
     button {
       width: 35px;
       height: 35px;
+
       border-radius: 50%;
       border: none;
-      background: #C8A27A;
+
+      background: $primary;
+      color: $bg-color;
+
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    span {
+      min-width: 20px;
+      text-align: center;
     }
   }
+
+  /* =========================
+     REMOVE
+  ========================= */
 
   .remove-btn {
     background: transparent;
     border: none;
     color: #ff7b7b;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
+  /* =========================
+     SUMMARY
+  ========================= */
+
   .cart-summary {
-    background: #2B1B12;
+    background: $card-bg;
     padding: 30px;
     border-radius: 20px;
     height: fit-content;
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    h3 {
+      margin: 0;
+      color: $primary;
+      font-size: 28px;
+    }
 
     button {
       width: 100%;
       margin-top: 20px;
       padding: 14px;
+
       border: none;
       border-radius: 30px;
-      background: #C8A27A;
+
+      background: $primary;
+      color: $bg-color;
+
+      font-weight: 600;
+      cursor: pointer;
+
+      transition: 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
     }
   }
+
+  /* =========================
+     EMPTY CART
+  ========================= */
+
+  .empty-cart {
+    min-height: 60vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    .empty-cart-icon {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: rgba(245, 237, 227, 0.6);
+      margin-bottom: 25px;
+    }
+
+    button {
+      padding: 12px 25px;
+
+      border: none;
+      border-radius: 30px;
+
+      background: $primary;
+      color: $bg-color;
+
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 992px) {
+
+  .cart-page {
+    padding: 90px 35px;
+
+    .cart-container {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .cart-summary {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+  .cart-page {
+    padding: 90px 16px 40px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    .cart-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 25px;
+    }
+
+    .cart-items {
+      width: 100%;
+    }
+
+    .cart-card {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+
+      display: grid;
+      grid-template-columns: 75px minmax(0, 1fr);
+      gap: 12px;
+
+      padding: 14px;
+      margin: 0;
+      border-radius: 16px;
+
+      img {
+        width: 75px;
+        height: 75px;
+        max-width: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+
+      .cart-info {
+        min-width: 0;
+        overflow: hidden;
+
+        h3 {
+          font-size: 16px;
+          margin: 0 0 6px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        p {
+          font-size: 14px;
+          margin: 0;
+        }
+      }
+
+      .qty-controls {
+        grid-column: 1 / -1;
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+
+        button {
+          width: 32px;
+          height: 32px;
+        }
+      }
+
+      .remove-btn {
+        position: static !important;
+        grid-column: 1 / -1;
+
+        justify-self: center;
+
+        width: auto;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        padding: 5px 10px;
+        margin: 0;
+
+        background: transparent;
+        border: none;
+        color: #ff7b7b;
+        white-space: nowrap;
+      }
+    }
+
+    .cart-summary {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+  .cart-page {
+    padding: 70px 16px 40px;
+
+    h1 {
+      font-size: 28px;
+    }
+
+    .cart-card {
+      padding: 12px;
+
+      grid-template-columns: 65px 1fr;
+
+      img {
+        width: 65px;
+        height: 65px;
+      }
+
+      .cart-info {
+
+        h3 {
+          font-size: 15px;
+        }
+
+        p {
+          font-size: 13px;
+        }
+      }
+
+      .qty-controls {
+
+        button {
+          width: 30px;
+          height: 30px;
+          font-size: 13px;
+        }
+
+        span {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .cart-summary {
+      padding: 18px;
+
+      button {
+        padding: 12px;
+      }
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.cart-page {
+  overflow-x: hidden;
 }

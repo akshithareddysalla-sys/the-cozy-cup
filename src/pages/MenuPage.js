@@ -15,20 +15,6 @@ function MenuPage() {
   const [milk, setMilk] = useState("Regular");
   const [sugar, setSugar] = useState("Normal");
 
-  const isDessert = selected?.category === "desserts";
-
-  const [portion, setPortion] = useState("Regular");
-  const [toppings, setToppings] = useState([]);
-  const [serve, setServe] = useState("Warm");
-
-  const toggleTopping = (t) => {
-    setToppings((prev) =>
-      prev.includes(t)
-        ? prev.filter((i) => i !== t)
-        : [...prev, t]
-    );
-  };
-
   const {
     cart,
     addToCart,
@@ -185,10 +171,7 @@ function MenuPage() {
                           size,
                           temperature,
                           milk,
-                          sugar,
-                          portion,
-                          toppings,
-                          serve
+                          sugar
                         });
                       }}
                     >

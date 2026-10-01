@@ -1,6 +1,11 @@
 import "../styles/_footer.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faInstagram,
+  faFacebook,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -8,54 +13,107 @@ function Footer() {
 
       <div className="footer-top">
 
+        {/* ABOUT */}
         <div className="footer-column">
           <h5>About Us</h5>
-          <a href="#">Our Company</a>
-          <a href="#">Our Coffee</a>
-          <a href="#">Stories</a>
+
+          <Link to="/about">Our Company</Link>
+          <Link to="/about">Our Coffee</Link>
+          <Link to="/about">Stories</Link>
         </div>
 
+
+        {/* EXPLORE */}
         <div className="footer-column">
           <h5>Explore</h5>
-          <a href="#">Seasonal Flavors</a>
-          <a href="#">New Arrivals</a>
-          <a href="#">Bestsellers</a>
+
+          <Link to="/menu">Seasonal Flavors</Link>
+          <Link to="/menu">New Arrivals</Link>
+          <Link to="/menu">Bestsellers</Link>
         </div>
 
+
+        {/* SERVICES */}
         <div className="footer-column">
           <h5>Services</h5>
-          <a href="#">Online Orders</a>
-          <a href="#">Custom Brews</a>
-          <a href="#">Gift Cards</a>
+
+          <Link to="/menu">Online Orders</Link>
+          <Link to="/menu">Custom Brews</Link>
+          <Link to="/menu">Gift Cards</Link>
         </div>
 
+
+        {/* CONTACT */}
         <div className="footer-column">
           <h5>Contact</h5>
-          <a href="#">Help Center</a>
-          <a href="#">Customer Care</a>
-          <a href="#">Support</a>
+
+          <Link to="/location">Help Center</Link>
+          <Link to="/location">Customer Care</Link>
+          <Link to="/location">Support</Link>
         </div>
 
       </div>
 
+
       {/* DIVIDER */}
       <hr />
 
-      {/* SOCIAL + COPYRIGHT CENTERED */}
+
+      {/* SOCIAL + COPYRIGHT */}
       <div className="footer-center">
 
+        {/* SOCIAL */}
         <div className="footer-social">
-          <FontAwesomeIcon icon={faInstagram} />
-          <FontAwesomeIcon icon={faFacebook} />
-          <FontAwesomeIcon icon={faTwitter} />
+
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram"
+          >
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Facebook"
+          >
+            <FontAwesomeIcon icon={faFacebook} />
+          </a>
+
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Twitter"
+          >
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
+
         </div>
 
+
+        {/* FOOTER LINKS */}
         <div className="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Cookie Preferences</a>
+
+          <button type="button">
+            Privacy Policy
+          </button>
+
+          <button type="button">
+            Terms of Use
+          </button>
+
+          <button type="button">
+            Cookie Preferences
+          </button>
+
         </div>
 
+
+        {/* COPYRIGHT */}
         <p className="copyright">
           © 2026 The Cozy Cup Company. All rights reserved.
         </p>
