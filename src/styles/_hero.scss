@@ -1,5 +1,5 @@
 .hero {
-  min-height: 100vh;
+  min-height: auto;
   background: linear-gradient(135deg, #1E120D, #2B1B12);
   padding: 20px 40px;
   overflow: hidden;
@@ -68,6 +68,39 @@
       height: auto;
       object-fit: contain;
       margin-top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    min-height: auto !important;
+
+    .hero-left {
+      h1 {
+        font-size: 40px !important;
+      }
+
+      p {
+        max-width: 100%;
+      }
+
+      .hero-buttons {
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 14px;
+      }
+    }
+
+    .hero-right {
+      img {
+        width: 80%;
+        margin-top: 20px;
+      }
     }
   }
 }
