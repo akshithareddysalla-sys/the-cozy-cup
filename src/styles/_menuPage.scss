@@ -212,6 +212,7 @@
 
       button {
         background: #C8A27A;
+        color: #1E120D;
         border: none;
         padding: 10px 20px;
         border-radius: 20px;
@@ -359,10 +360,9 @@
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(245, 237, 227, 0.2);
-  border-radius: 50%;
+  border: none;
 
-  background: rgba(43, 27, 18, 0.9);
+  background: none;
 
   color: $text;
 
@@ -377,17 +377,17 @@
   &:hover {
     border-color: $primary;
 
-    color: $primary;
+    color: $bg-color;
 
     transform: scale(1.08);
   }
 
   &.active {
-    background: $primary;
+    background: none;
 
-    border-color: $primary;
+    border-color: none;
 
-    color: $bg-color;
+    color: $primary;
   }
 }
 
@@ -420,14 +420,13 @@
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(245, 237, 227, 0.2);
-  border-radius: 50%;
+  border: none;
 
-  background: rgba(43, 27, 18, 0.9);
+  background: none;
 
   color: $text;
 
-  font-size: 24px;
+  font-size: 30px;
 
   cursor: pointer;
 
@@ -438,17 +437,15 @@
   &:hover {
     border-color: $primary;
 
-    color: $primary;
+    color: $bg-color;
 
     transform: scale(1.08);
   }
 
   &.active {
-    background: $primary;
+    background: none;
 
-    border-color: $primary;
-
-    color: $bg-color;
+    color: $primary;
   }
 }
 

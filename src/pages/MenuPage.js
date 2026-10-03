@@ -5,6 +5,8 @@ import { useCart } from "../context/CartContext";
 import { useFavorites } from "../context/FavoritesContext";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 function MenuPage() {
   const [selected, setSelected] = useState(menuData[0] || {});
@@ -119,7 +121,10 @@ function MenuPage() {
                       : `Add ${item.name} to favorites`
                   }
                 >
-                  {isFavorite(item.id) ? "♥" : "♡"}
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    className={isFavorite(selected.id) ? "favorite-active" : "favorite-inactive"}
+                  />
                 </button>
 
               </div>
@@ -268,7 +273,10 @@ function MenuPage() {
                       toggleFavorite(item);
                     }}
                   >
-                    {isFavorite(item.id) ? "♥" : "♡"}
+                    <FontAwesomeIcon
+                      icon={faHeart}
+                      className={isFavorite(selected.id) ? "favorite-active" : "favorite-inactive"}
+                    />
                   </button>
 
                 </div>
@@ -304,7 +312,10 @@ function MenuPage() {
                   }`}
                   onClick={() => toggleFavorite(selected)}
                 >
-                  {isFavorite(selected.id) ? "♥" : "♡"}
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    className={isFavorite(selected.id) ? "favorite-active" : "favorite-inactive"}
+                  />
                 </button>
 
               </div>
